@@ -10,15 +10,14 @@
 		<link href='css/app.css' rel='stylesheet'>
 	</head>
 	<body>
-		<div class="board board--selection">
-			<ul class="board__list">
-				<li>
-					<a href="flashcards.html" class="card"><span aria-hidden="true" data-icon="&#xe003;" class="nav__icon"></span>Practice</a>
-				</li>
-				<li class="board__item--game">
-					<a href="game.html" class="card"><span aria-hidden="true" data-icon="&#xe001;" class="nav__icon"></span>Game</a>
-				</li>
-			</ul>
-		</div>
+		<nav>
+			<a href="index.html"><span class="controller" aria-hidden="true" data-icon="&#xe002;"></span></a>
+		</nav>
+		<div id="stage" class="word"></div>
+		<button id="bubble-button" class="bubble allowplay" aria-hidden="true" data-icon="&#xe000;"></button>
+		
+		<script src="js/fittext.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/flashcards.js"></script>
 	</body>
 </html>

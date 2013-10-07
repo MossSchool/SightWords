@@ -1,5 +1,7 @@
 *{
-	box-sizing:border-box;
+  -webkit-box-sizing: border-box; /* Android ≤ 2.3, iOS ≤ 4 */
+     -moz-box-sizing: border-box; /* Firefox 1+ */
+          box-sizing: border-box; /* Chrome, IE 8+, Opera, Safari 5.1 */
 	margin:0;
 	padding:0;
 }
@@ -22,45 +24,7 @@ body{
 	overflow: hidden;
 }
 
-a{color: #181C24;}
-
-.word{
-	cursor:pointer;
-	display:table-cell;
-	font-size:24em;
-	text-align: center;
-	vertical-align: middle;
-	width: 100%;
-
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-}
-
-.bubble{
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	font-size: 4em;
-	margin-left: -0.5em;
-	margin-top: -1.5em;
-	opacity: 0.2;
-	background: none;
-	border: none;
-	-webkit-animation:bubble-in 5.2s ease-out;
-}
-.bubble:focus{outline:none;}
-.no-audio .bubble{display: none;}
-
-.controller{
-	position: absolute;
-	top: 0;
-	left:0;
-	font-size:2.5em;
-	background:none;
-	border:none;
-	margin-left:.333em;
-}
+a{ color: #181C24; }
 
 @font-face {
 	font-family: 'iconset';
@@ -108,34 +72,51 @@ you can use the generic selector below, but it's slower:
 	content: "\e000";
 }
 
-@-webkit-keyframes bubble-in {
-  0%   { top: 130%; }
-  92%   { top: 130%; }
-  96%   { top: 95%; }
-  98%   { top: 105%; }
-  100% { top: 100%; }
+.word{
+	cursor:pointer;
+	display:table-cell;
+	font-size:24em;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
-@-moz-keyframes bubble-in {
-  0%   { top: 130%; }
-  92%   { top: 130%; }
-  96%   { top: 95%; }
-  98%   { top: 105%; }
-  100% { top: 100%; }
+
+.bubble{
+	background: none;
+	border: none;
+	font-size: 4em;
+	left: 50%;	
+	margin-left: -0.5em;
+	margin-top: -1.5em;
+	opacity: 0.2;
+	position: absolute;
+	top: 100%;
+	
+	-webkit-animation: bubble-in 5.2s ease-out; /* Chrome, Safari 5+ */
+	   -moz-animation: bubble-in 5.2s ease-out; /* Firefox 5-15 */
+	     -o-animation: bubble-in 5.2s ease-out; /* Opera 12.00 */
+	        animation: bubble-in 5.2s ease-out; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */
 }
-@-o-keyframes bubble-in {
-  0%   { top: 130%; }
-  92%   { top: 130%; }
-  96%   { top: 95%; }
-  98%   { top: 105%; }
-  100% { top: 100%; }
+.bubble:focus{ outline:none; }
+.no-audio .bubble{ display: none; }
+
+.controller{
+	position: absolute;
+	top: 0;
+	left:0;
+	font-size:2.5em;
+	background:none;
+	border:none;
+	margin-left:.333em;
 }
-@keyframes bubble-in {
-  0%   { top: 130%; }
-  92%   { top: 130%; }
-  96%   { top: 95%; }
-  98%   { top: 105%; }
-  100% { top: 100%; }
-}
+
+
+
+
 
 .pcard{
 	display: block;
@@ -154,10 +135,11 @@ you can use the generic selector below, but it's slower:
 	margin:0 auto;
 	max-width: 600px;
 
-		-moz-user-select: none;
+	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 }
+
 .board__list{
 	display: table-cell;
 	list-style: none;
@@ -209,7 +191,12 @@ you can use the generic selector below, but it's slower:
 }
 
 .correct {
-background-image: linear-gradient(white, rgb(203, 255, 205));
+	background: rgb(203, 255, 205); /* Old browsers */
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(rgb(203, 255, 205)));
+	background-image: -webkit-linear-gradient(white, rgb(203, 255, 205));
+	background-image: -moz-linear-gradient(white, rgb(203, 255, 205));
+	background-image: -o-linear-gradient(white, rgb(203, 255, 205));
+	background-image: linear-gradient(white, rgb(203, 255, 205));
 }
 .incorrect{
 	-webkit-transform: scale(0);
@@ -220,15 +207,44 @@ background-image: linear-gradient(white, rgb(203, 255, 205));
 }
 
 #gamescore{
-position: absolute;
-top: 100%;
-right: 0%;
-font-size: 2em;
-margin-right: 0.5em;
-margin-top: -1.5em;
+	position: absolute;
+	top: 100%;
+	right: 0%;
+	font-size: 2em;
+	margin-right: 0.5em;
+	margin-top: -1.5em;
 }
 
 .nav__icon{
 	vertical-align: middle;
 	margin-right: .333em;
+}
+
+@-webkit-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@-moz-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@-o-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
 }
