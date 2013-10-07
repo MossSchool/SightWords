@@ -64,11 +64,11 @@ a{color: #181C24;}
 
 @font-face {
 	font-family: 'iconset';
-	src:url('fonts/iconset.eot');
-	src:url('fonts/iconset.eot?#iefix') format('embedded-opentype'),
-		url('fonts/iconset.woff') format('woff'),
-		url('fonts/iconset.ttf') format('truetype'),
-		url('fonts/iconset.svg#iconset') format('svg');
+	src:url('../fonts/iconset.eot');
+	src:url('../fonts/iconset.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iconset.woff') format('woff'),
+		url('../fonts/iconset.ttf') format('truetype'),
+		url('../fonts/iconset.svg#iconset') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
