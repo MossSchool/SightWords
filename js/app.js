@@ -90,7 +90,7 @@ function init() {
 	  // Fix up prefixing
 	  window.AudioContext = window.AudioContext || window.webkitAudioContext;
 	  context = new AudioContext();
-	  bufferLoader = new BufferLoader(
+	  findTheWordLoader = new BufferLoader(
 	    context,
 	    [
 	    	'audio/findtheword.m4a'
@@ -99,6 +99,8 @@ function init() {
 	    	findTheWord = bufferList;
 	    }
 	  );
+	  findTheWordLoader.load();
+
 	  bufferLoader = new BufferLoader(
 	    context,
 	    [
