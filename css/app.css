@@ -1,0 +1,234 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+html, body{
+	height:100%;
+	width: 100%;
+}
+body{
+	background: #E2EBF0; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #FFFFFF 45%, #B6CEDA 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(45%,#FFFFFF), color-stop(100%,#B6CEDA)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #FFFFFF 45%, #B6CEDA 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #FFFFFF 45%, #B6CEDA 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #FFFFFF 45%, #B6CEDA 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #FFFFFF 45%, #B6CEDA 100%); /* W3C */
+
+	color:#181C24;
+	display: table;
+	font-family: 'Source Sans Pro', sans-serif;
+	overflow: hidden;
+}
+
+a{color: #181C24;}
+
+.word{
+	cursor:pointer;
+	display:table-cell;
+	font-size:24em;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.bubble{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	font-size: 4em;
+	margin-left: -0.5em;
+	margin-top: -1.5em;
+	opacity: 0.2;
+	background: none;
+	border: none;
+	-webkit-animation:bubble-in 5.2s ease-out;
+}
+.bubble:focus{outline:none;}
+.no-audio .bubble{display: none;}
+
+.controller{
+	position: absolute;
+	top: 0;
+	left:0;
+	font-size:2.5em;
+	background:none;
+	border:none;
+	margin-left:.333em;
+}
+
+@font-face {
+	font-family: 'iconset';
+	src:url('fonts/iconset.eot');
+	src:url('fonts/iconset.eot?#iefix') format('embedded-opentype'),
+		url('fonts/iconset.woff') format('woff'),
+		url('fonts/iconset.ttf') format('truetype'),
+		url('fonts/iconset.svg#iconset') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'iconset';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-bubble {
+
+
+	font-family: 'iconset';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-bubble:before {
+	content: "\e000";
+}
+
+@-webkit-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@-moz-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@-o-keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+@keyframes bubble-in {
+  0%   { top: 130%; }
+  92%   { top: 130%; }
+  96%   { top: 95%; }
+  98%   { top: 105%; }
+  100% { top: 100%; }
+}
+
+.pcard{
+	display: block;
+	background: white;
+	height: 45%;
+	width: 48%;
+	box-shadow: 0 3px 7px rgb(231, 225, 225);
+	margin: 0 4% 5% 0;
+	padding: 2em;
+	float: left;
+}
+
+.board { 
+	display: table;
+	height:100%;
+	margin:0 auto;
+	max-width: 600px;
+
+		-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.board__list{
+	display: table-cell;
+	list-style: none;
+	padding:0 1em;
+	vertical-align: middle;
+}
+.noaudio .board__item--game{ display: none; }
+.card{
+	font-size:2.5em;
+	margin-bottom: .75em;
+}
+@media all and (min-width: 300px) {
+	.card{ font-size:3em;}
+}
+@media all and (min-width: 400px) {
+	.card{ font-size:4em;}
+	
+}
+
+.ten-up .card { font-size:2.5em; }
+
+.card{
+	background: white;
+	border:1px solid #E7E1E1;
+	box-shadow: 0 3px 7px #E7E1E1;
+	color:#181C24;
+	display:block;
+	line-height: 1.4em;
+	padding: 0 .25em;
+	text-align: center;
+	text-decoration: none;
+	float:left;
+	width:48%;
+
+	-webkit-transition: -webkit-transform .3s ease;
+	-moz-transition: -moz-transform .3s ease;
+	-ms-transition: -ms-transform .3s ease;
+	-o-transition: -o-transform .3s ease;
+	transition: transform .3s ease;
+}
+.card:focus{ outline: none; }
+.three-up .card{
+	width:100%;
+}
+.card:nth-child(even){ float:right;}
+
+.board--selection .card{
+	width: 100%;
+}
+
+.correct {
+background-image: linear-gradient(white, rgb(203, 255, 205));
+}
+.incorrect{
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+}
+
+#gamescore{
+position: absolute;
+top: 100%;
+right: 0%;
+font-size: 2em;
+margin-right: 0.5em;
+margin-top: -1.5em;
+}
+
+.nav__icon{
+	vertical-align: middle;
+	margin-right: .333em;
+}
