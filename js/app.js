@@ -96,7 +96,7 @@ function init() {
 	    	'audio/findtheword.m4a'
 	    ],
 	    function(bufferList){
-	    	findTheWord = bufferList[0];
+	    	findTheWord = bufferList;
 	    }
 	  );
 	  bufferLoader = new BufferLoader(
