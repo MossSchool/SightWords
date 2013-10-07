@@ -143,7 +143,6 @@ function init() {
 	catch(e){
 		//error was thrown loading audio, add no-audio class to disable the bubble 
 		document.getElementsByTagName('html')[0].className="no-audio";
-		alert('aahh');
 	}
 }
 
