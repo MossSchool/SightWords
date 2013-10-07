@@ -14,6 +14,7 @@ flashcard = function(){
 
 	//this is done to restart the CSS animation
 	var elm = document.getElementById('bubble-button');
+	elm.classList.add('allowplay');
 	var newOne = elm.cloneNode(true);
 	elm.parentNode.replaceChild(newOne, elm);
 
