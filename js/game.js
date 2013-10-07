@@ -43,7 +43,7 @@ gameboard = function(howManyCards){
 
 	//play "find the word"
 	var source0 = context.createBufferSource();
-	source0.buffer = myBufferList[0];
+	source0.buffer = findTheWord;
 	source0.connect(context.destination);
 	source0.start(0);
 

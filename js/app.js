@@ -83,13 +83,22 @@ window.onload = init;
 var context;
 var bufferLoader;
 var myBufferList;
+var findTheWord;
 
 function init() {
 	try{
 	  // Fix up prefixing
 	  window.AudioContext = window.AudioContext || window.webkitAudioContext;
 	  context = new AudioContext();
-
+	  bufferLoader = new BufferLoader(
+	    context,
+	    [
+	    	'audio/findtheword.m4a'
+	    ],
+	    function(bufferList){
+	    	findTheWord = bufferList[0];
+	    }
+	  );
 	  bufferLoader = new BufferLoader(
 	    context,
 	    [
